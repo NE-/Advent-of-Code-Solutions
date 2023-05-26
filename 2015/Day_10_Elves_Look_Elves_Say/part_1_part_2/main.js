@@ -1,7 +1,7 @@
 /**
  * Author: @NE- https://github.com/NE-
  * 
- * Solution for Advent of Code 2015 Day 10
+ * Solution for Advent of Code 2015 Day 10.1 and 10.2
  */
 
 const input = "3113322113";

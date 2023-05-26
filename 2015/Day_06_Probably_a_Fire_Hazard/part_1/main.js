@@ -6,7 +6,6 @@
 
 let input = null;
 
-// Read input
 try {
   input = require('fs').readFileSync("../input.txt", "utf-8").split("\n");
 } catch (err) {
@@ -20,13 +19,13 @@ if (input !== null) {
   */
   const lights = new Uint8Array((1000*1000)>>3);
 
-  /*
-    Execute the given instructions
-
-    @param {String}         cmd: command to execute [on | off | toggle]
-    @param {Array: Integer} p1:  starting point/coordinates (x, y)
-    @param {Array: Integer} p2:  ending point/coordinates (x, y)
-  */
+  /**
+   * Executes the given instruction
+   *
+   * @param {String}         cmd: command to execute [on | off | toggle]
+   * @param {Array: Integer} p1:  starting point/coordinates (x, y)
+   * @param {Array: Integer} p2:  ending point/coordinates (x, y)
+   */
   const execute = (cmd, p1, p2) => {
     for (let x = +p1[0]; x <= +p2[0]; ++x) {
       for (let y = +p1[1]; y <= +p2[1]; ++y) {
@@ -47,7 +46,6 @@ if (input !== null) {
           lights[bit>>3] ^= (1<<(7-bit&0x7));
 
         else console.error(`Unknown command ${cmd}`);
-
       }
     }
   };

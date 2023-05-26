@@ -26,6 +26,14 @@ if (input !== null) {
     perfumes: 1
   };
 
+  /**
+   * 
+   * @param {String} prop - property of Sue
+   * @param {String} val  - value of the propert
+   * 
+   * @returns {Boolean}   - true if new condition is met
+   *                        false otherwise
+   */
   const retroencabulator = (prop, val) => {
     switch(prop) {
       case "cats":
@@ -49,7 +57,7 @@ if (input !== null) {
       retroencabulator(parsedInput[6], parsedInput[7])
     ) {
       sue = parsedInput[1];
-      break;
+      break; // Every Sue is unique so we can stop checking
     }
   }
 

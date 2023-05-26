@@ -1,12 +1,11 @@
 /**
  * Author: @NE- https://github.com/NE-
  * 
- * Solution for Advent of Code 2015 Day 12
+ * Solution for Advent of Code 2015 Day 12.1 and 12.2
  */
 
 let input = null;
 
-// Read input
 try {
   input = require('fs').readFileSync("../input.txt", "utf-8");
 } catch (err) {

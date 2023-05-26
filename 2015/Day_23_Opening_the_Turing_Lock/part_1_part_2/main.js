@@ -1,7 +1,7 @@
 /**
  * Author: @NE- https://github.com/NE-
  * 
- * Solution for Advent of Code 2015 Day 23
+ * Solution for Advent of Code 2015 Day 23.1 and 23.2
  */
 
 let input = null;

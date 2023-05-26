@@ -13,7 +13,7 @@ try {
 }
 
 if (input !== null) {
-  const width = 100; // Width of given grid
+  const width = 100;     // Width of given grid
   
   let prev = [...input]; // Previous animated frame
   let next = [...prev];  // Next animation buffer
@@ -27,9 +27,9 @@ if (input !== null) {
         let neighbors = 0;
 
         /* 
-          If direction is in bounds and 
-          that neighbor is on,
-          increment "neighbors"
+         * If direction is in bounds and 
+         * that neighbor is on,
+         * increment "neighbors"
          */
         // - NW
         if (
@@ -74,13 +74,11 @@ if (input !== null) {
 
         // Check rules
         // - If light is on and neighbors do not total 2 or 3, turn it off
-        if (prev[x+y*width] == '#' && neighbors != 2 && neighbors != 3) {
+        if (prev[x+y*width] == '#' && neighbors != 2 && neighbors != 3)
           next[x+y*width] = '.';
-        }
         // - If light is off and has exactly 3 neighbors, turn it on
-        else if (prev[x+y*width] == '.' && neighbors == 3) {
+        else if (prev[x+y*width] == '.' && neighbors == 3)
           next[x+y*width] = '#';
-        }
       } // End for x loop
     } // End for y loop
   };
@@ -97,8 +95,7 @@ if (input !== null) {
     console.log();
   };
 
-  for (let i = 0; i < 100; ++i)
-    step();
+  for (let i = 0; i < 100; ++i) step();
 
   // We only want number of lights "on"
   const result = next.filter(char => char == '#');

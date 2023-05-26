@@ -6,7 +6,6 @@
 
 let input = null;
 
-// Read input
 try {
   input = require('fs').readFileSync('../input.txt', 'utf-8').split('\n');
 } catch (err) {
@@ -45,13 +44,13 @@ if (input !== null) {
   const sums = [];         // Holds sum of each arrangement
   const arrangements = []; // Holds all possible arrangements
 
-  /*
-    Creates all permutations based on an anchor
-
-    @param {String} anchor  - The chosen anchor as the start point
-    @param {String} curr    - Current node it's working on
-    @param {Array}  arr     - Holds current arrangement
-    @param {Array}  visited - Holds which node has been visited
+  /**
+   * Creates all permutations based on an anchor
+   *
+   * @param {String} anchor  - The chosen anchor as the start point
+   * @param {String} curr    - Current node it's working on
+   * @param {Array}  arr     - Holds current arrangement
+   * @param {Array}  visited - Holds which node has been visited
    */
   const possibleArrangements = (anchor, curr, arr, visited) => {
     visited[pplI.get(curr)] = true;
@@ -70,19 +69,19 @@ if (input !== null) {
     }
   };
 
-  /*
-    Adds up all happiness units based on seating arrangement
-
-    @param {Array} arrs - Array of arrangements
+  /**
+   * Adds up all happiness units based on seating arrangement
+   *
+   * @param {Array} arrs - Array of arrangements
    */
-  const calculateArrangements = (arrs) => {
+  const calculateArrangements = arrs => {
     let sum = 0; // Holds total sum of each arrangement
 
     for (const arr of arrs) {
       for (let i = 0; i < arr.length; ++i) {
         if (i < arr.length-1) {
-          sum += +people.get(arr[i])[arr[i+1]]; // Forward value a to b
-          sum += +people.get(arr[i+1])[arr[i]]; // Backward value b to a
+          sum += +people.get(arr[i])[arr[i+1]]; // Forward value  (a to b)
+          sum += +people.get(arr[i+1])[arr[i]]; // Backward value (b to a)
         }
         else {
           sum += +people.get(arr[i])[arr[0]]; // Last to first

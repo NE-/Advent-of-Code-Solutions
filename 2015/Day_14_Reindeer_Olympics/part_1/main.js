@@ -6,7 +6,6 @@
 
 let input = null;
 
-// Read input
 try {
   input = require('fs').readFileSync('../input.txt', 'utf-8').split('\n');
 } catch (err) {
@@ -16,9 +15,8 @@ try {
 if (input !== null) {
   // Parse input
   let parsedInput = [];
-  for (const str of input) {
+  for (const str of input)
     parsedInput.push(str.match(/\d+/g)); // Get reindeer stats [speed, time, rest]
-  }
 
   let maxDist = -1;
   const ttlTime = 2503;

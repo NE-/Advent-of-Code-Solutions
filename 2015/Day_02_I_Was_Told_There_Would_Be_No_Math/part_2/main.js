@@ -7,15 +7,13 @@
 let input = null;
 const convertedInput = [];
 
-// Read input
 try {
   input = require('fs').readFileSync("../input.txt", 'utf-8')
     .trim().replace(/\r\n|\n|\r/gm, " ").split(" "); // Separate values
 
-  for (let i = 0; i < input.length; ++i) {
-    // Remove 'x' and sort the values for calculating slack
+  // Remove 'x' and sort the values for calculating slack
+  for (let i = 0; i < input.length; ++i)
     convertedInput.push(input[i].split('x').sort((a, b) => a - b));
-  }
 } catch (err) {
   console.error(err);
 }

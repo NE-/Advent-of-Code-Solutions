@@ -6,7 +6,6 @@
 
 let input = null;
 
-// Read input
 try {
   input = require('fs').readFileSync("../input.txt", "utf-8")
     .trim().replace(/\r\n|\n|\r/gm, " ").split(" "); // Separate values

@@ -6,7 +6,6 @@
 
 let input = null;
 
-// Read input
 try {
   input = require('fs').readFileSync("../input.txt", "utf-8").split("\n");
 } catch (err) {
@@ -55,9 +54,7 @@ if (input !== null) {
       return cache[wire];
     }
     // Equation was an assignment
-    else {
-      return findSignal(splitInput[0]);
-    }
+    else return findSignal(splitInput[0]);
   };
 
   // Override wire b with a

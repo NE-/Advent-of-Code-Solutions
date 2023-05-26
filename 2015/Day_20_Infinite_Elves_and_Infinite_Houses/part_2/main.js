@@ -8,6 +8,8 @@ const input = 29000000;
 
 const houses = new Array(input).fill(0);
 
+// Find the lowest house number of the house to get at least
+// as many presents as the number in input with imposed limit
 for (let elf = 2; elf < input; ++elf) {
   let limit = 0; // Counter for the imposed limit (50)
 
@@ -17,6 +19,8 @@ for (let elf = 2; elf < input; ++elf) {
     ++limit;
     if (limit >= 50) break;
   }
+
+  // Solution found? done
   if (houses[elf-1] >= input) {
     console.log(elf);
     break;

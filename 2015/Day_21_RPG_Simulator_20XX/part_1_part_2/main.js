@@ -1,7 +1,7 @@
 /**
  * Author: @NE- https://github.com/NE-
  * 
- * Solution for Advent of Code 2015 Day 21
+ * Solution for Advent of Code 2015 Day 21.1 and 21.2
  */
 
 class Item {
@@ -47,6 +47,14 @@ const rings = [
   new Item(80 ,0, 3)   // Defense +3
 ];
 
+/**
+ * 
+ * @param {Integer} ttlDamage - Total damage of equipped items
+ * @param {Integer} ttlArmor  - Total armor of equipped items
+ * 
+ * @returns {Boolean}         - true if player's HP is greater than 0
+ *                              false otherwise
+ */
 const simulate = (ttlDamage, ttlArmor) => {
   const player = {
     hp: 100,
@@ -79,7 +87,7 @@ const simulate = (ttlDamage, ttlArmor) => {
     playerTurn = !playerTurn;
   }
 
-  return player.hp > 0; // Return: did player win?
+  return player.hp > 0; // did player win?
 };
 
 let spentWin = [];
@@ -103,7 +111,7 @@ for (const wpn of weapons) {
           );
 
           if (playerWin) spentWin.push(ttlCost); // Part 1
-          else spentLoss.push(ttlCost); // Part 2
+          else spentLoss.push(ttlCost);          // Part 2
         }
       }
     }

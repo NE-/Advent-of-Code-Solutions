@@ -1,12 +1,11 @@
 /**
  * Author: @NE- https://github.com/NE-
  * 
- * Solution for Advent of Code 2015 Day 9
+ * Solution for Advent of Code 2015 Day 9.1 and 9.2
  */
 
 let input = null;
 
-// Read input
 try {
   input = require('fs').readFileSync("../input.txt", "utf-8").split("\n");
 } catch (err) {
@@ -43,15 +42,15 @@ if (input !== null) {
   let weights = []; // Holds weights for final addition
                     // Purpose unused, but logic breaks if removed
 
-  /*
-    Sums up all possible paths of
-    a given root node.
-
-    @param {Number} root    - The root of the current node
-    @param {Number} curr    - The current node
-    @param {Array}  visited - Keeps track of visited nodes
-    @param {Number} sum     - Holds the sum of examined weights
-  */
+  /**
+   * Sums up all possible paths of
+   * a given root node.
+   *
+   * @param {Number} root    - The root of the current node
+   * @param {Number} curr    - The current node
+   * @param {Array}  visited - Keeps track of visited nodes
+   * @param {Number} sum     - Holds the sum of examined weights
+   */
   const findPaths = (root, curr, visited, sum) => {
     if (visited[curr]) return; // If we visited a node already, leave. Never hit.
 
@@ -74,9 +73,8 @@ if (input !== null) {
   }; // End findPaths
 
   // Find path for every node
-  for (let i = 0; i < adjMatrix.length; ++i) {
+  for (let i = 0; i < adjMatrix.length; ++i)
     findPaths(i, i, new Array(adjMatrix.length).fill(false), 0);
-  }
 
   // Part 1, find the shortest path
   console.log(sums.sort((a, b) => a - b)[0]);

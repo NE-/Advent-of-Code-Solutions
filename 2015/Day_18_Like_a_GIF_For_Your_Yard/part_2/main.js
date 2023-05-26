@@ -41,9 +41,9 @@ if (input !== null) {
         )  continue;
 
         /* 
-          If direction is in bounds and 
-          that neighbor is on,
-          increment "neighbors"
+         * If direction is in bounds and 
+         * that neighbor is on,
+         * increment "neighbors"
          */
         // - NW
         if (
@@ -88,17 +88,16 @@ if (input !== null) {
 
         // Check rules
         // - If light is on and neighbors do not total 2 or 3, turn it off
-        if (prev[x+y*width] == '#' && neighbors != 2 && neighbors != 3) {
+        if (prev[x+y*width] == '#' && neighbors != 2 && neighbors != 3)
           next[x+y*width] = '.';
-        }
         // - If light is off and has exactly 3 neighbors, turn it on
-        else if (prev[x+y*width] == '.' && neighbors == 3) {
+        else if (prev[x+y*width] == '.' && neighbors == 3)
           next[x+y*width] = '#';
-        }
       } // End for x loop
     } // End for y loop
   };
 
+  // Helper function to print the array
   const print = arr => {
     for (let y = 0; y < width; ++y) {
       let line = "";
@@ -110,8 +109,7 @@ if (input !== null) {
     console.log();
   };
 
-  for (let i = 0; i < 100; ++i)
-    step();
+  for (let i = 0; i < 100; ++i) step();
 
   const result = next.filter(char => char == '#');
 
